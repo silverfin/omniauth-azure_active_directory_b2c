@@ -13,7 +13,7 @@ module OmniAuth
 
         def initialize(policy, code, **override_options)
           @policy = policy
-          @client = policy.initialize_client({ redirect_uri: nil, **override_options })
+          @client = policy.initialize_client(redirect_uri: nil, **override_options)
           @client.authorization_code = code
           @code = code
         end
