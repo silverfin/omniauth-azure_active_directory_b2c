@@ -3,14 +3,14 @@ module OmniAuth
     class AzureActiveDirectoryB2C
       module PolicyOptions
 
-        def respond_to_missing?(method_name, *args)
+        def respond_to_missing?(method_name, ...)
           self.class.instance_methods.include?("policy_#{method_name}".to_sym) || super
         end
 
-        def method_missing(method_name, *args, &block)
+        def method_missing(method_name, ...)
           policy_method_name = 'policy_%s' % method_name
           if respond_to?(policy_method_name)
-            send(policy_method_name, *args, &block)
+            send(policy_method_name, ...)
           else
             super
           end
