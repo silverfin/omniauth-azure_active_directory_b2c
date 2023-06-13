@@ -28,5 +28,5 @@ Gem::Specification.new do |spec|
     ]
 
   spec.add_dependency 'omniauth', '~> 1.3'
-  spec.add_dependency 'openid_connect', '~> 1.1'
+  spec.add_dependency 'openid_connect', '~> 2.2'
 end
